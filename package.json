@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./dist/losso.js",
   "types": "./dist/types/losso.d.ts",
+  "homepage": "https://github.com/utftu/losso",
   "scripts": {
     "build": "bun build ./src/losso.ts --outdir ./dist",
     "types": "tsc --project tsconfig.types.json",
