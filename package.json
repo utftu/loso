@@ -1,0 +1,14 @@
+{
+  "name": "loso",
+  "module": "src/loso.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build ./src/loso.ts --outdir ./dist",
+    "types": "tsc --project tsconfig.types.json",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "typescript": "^5.4.2"
+  }
+}

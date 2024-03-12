@@ -1,4 +1,4 @@
-# lsm
+# Loso
 
 To install dependencies:
 
