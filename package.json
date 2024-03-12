@@ -1,12 +1,12 @@
 {
-  "name": "loso",
+  "name": "losso",
   "version": "0.0.1",
-  "module": "src/loso.ts",
+  "module": "src/losso.ts",
   "type": "module",
-  "main": "./dist/loso.js",
-  "types": "./dist/types/loso.d.ts",
+  "main": "./dist/losso.js",
+  "types": "./dist/types/losso.d.ts",
   "scripts": {
-    "build": "bun build ./src/loso.ts --outdir ./dist",
+    "build": "bun build ./src/losso.ts --outdir ./dist",
     "types": "tsc --project tsconfig.types.json",
     "test": "bun test",
     "prepublish": "bun run build && bun run types"

@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'bun:test';
-import { Loso } from './loso.ts';
+import { Losso } from './losso.ts';
 
 class StorageInMemory implements Storage {
   storage: Record<string, string> = {};
@@ -24,22 +24,22 @@ class StorageInMemory implements Storage {
   }
 }
 
-describe('loso', () => {
+describe('losso', () => {
   describe('set', () => {
     it('set str', () => {
       const localStorage = new StorageInMemory();
 
-      const loso = Loso.new({
+      const losso = Losso.new({
         version: 'v0.0.1',
         localStorage,
       });
 
-      loso.set('hello', 'world');
+      losso.set('hello', 'world');
 
       const nowBefore = new Date().getTime() - 1000;
       const nowAfter = new Date().getTime() + 1000;
 
-      const helloConfig = JSON.parse(localStorage.getItem(Loso.configName))
+      const helloConfig = JSON.parse(localStorage.getItem(Losso.configName))
         .configs.hello;
       const updatedTime = new Date(helloConfig.updatedTime).getTime();
 
@@ -54,32 +54,32 @@ describe('loso', () => {
     it('set obj', () => {
       const localStorage = new StorageInMemory();
 
-      const loso = Loso.new({
+      const losso = Losso.new({
         version: 'v0.0.1',
         localStorage,
       });
 
-      loso.set('hello', { ping: 'pong' });
+      losso.set('hello', { ping: 'pong' });
 
       expect(JSON.parse(localStorage.getItem('hello')).ping).toBe('pong');
     });
     it('update', () => {
       const localStorage = new StorageInMemory();
 
-      const loso = Loso.new({
+      const losso = Losso.new({
         version: 'v0.0.1',
         localStorage,
       });
 
-      loso.set('hello', 'world');
+      losso.set('hello', 'world');
 
-      const loso2 = Loso.new({
+      const losso2 = Losso.new({
         version: 'v0.0.2',
         localStorage,
       });
 
-      loso2.set('hello', 'world2');
-      const helloConfig = JSON.parse(localStorage.getItem(Loso.configName))
+      losso2.set('hello', 'world2');
+      const helloConfig = JSON.parse(localStorage.getItem(Losso.configName))
         .configs.hello;
 
       expect(helloConfig.version).toBe('v0.0.2');
@@ -92,47 +92,47 @@ describe('loso', () => {
     it('str', () => {
       const localStorage = new StorageInMemory();
 
-      const loso = Loso.new({
+      const losso = Losso.new({
         version: 'v0.0.1',
         localStorage,
       });
 
-      loso.set('hello', 'world');
+      losso.set('hello', 'world');
 
-      const value = loso.get('hello');
+      const value = losso.get('hello');
       expect(value).toBe('world');
     });
 
     it('obj', () => {
       const localStorage = new StorageInMemory();
 
-      const loso = Loso.new({
+      const losso = Losso.new({
         version: 'v0.0.1',
         localStorage,
       });
 
-      loso.set('hello', { ping: 'pong' });
+      losso.set('hello', { ping: 'pong' });
 
-      const value = loso.get('hello');
+      const value = losso.get('hello');
       expect(value.ping).toBe('pong');
     });
 
     it('no meta', () => {
       const localStorage = new StorageInMemory();
 
-      const loso = Loso.new({
+      const losso = Losso.new({
         version: 'v0.0.1',
         localStorage,
       });
 
-      loso.set('hello', { ping: 'pong' });
+      losso.set('hello', { ping: 'pong' });
 
       localStorage.setItem(
-        Loso.configName,
+        Losso.configName,
         JSON.stringify({ varsion: '0.0.0', configs: {} })
       );
 
-      const value = loso.get('hello');
+      const value = losso.get('hello');
       expect(value).toBe(null);
     });
   });

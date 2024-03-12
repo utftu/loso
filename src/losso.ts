@@ -14,13 +14,13 @@ type Props = {
   localStorage?: Storage;
 };
 
-const configName = 'loso_config';
+const configName = 'losso_config';
 
-export class Loso {
+export class Losso {
   static configName = configName;
 
   static new(props: Props) {
-    return new Loso(props);
+    return new Losso(props);
   }
 
   private version: string;

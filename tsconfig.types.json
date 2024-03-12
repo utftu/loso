@@ -8,5 +8,5 @@
     "incremental": false,
     "composite": false
   },
-  "include": ["src/loso.ts"]
+  "include": ["src/losso.ts"]
 }

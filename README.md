@@ -1,4 +1,4 @@
-# Loso
+# Losso
 
 To install dependencies:
 
