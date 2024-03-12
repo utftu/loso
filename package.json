@@ -1,6 +1,6 @@
 {
   "name": "losso",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "module": "src/losso.ts",
   "type": "module",
   "main": "./dist/losso.js",
