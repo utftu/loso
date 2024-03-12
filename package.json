@@ -6,7 +6,8 @@
   "scripts": {
     "build": "bun build ./src/loso.ts --outdir ./dist",
     "types": "tsc --project tsconfig.types.json",
-    "test": "bun test"
+    "test": "bun test",
+    "prepublish": "bun run build && bun run types"
   },
   "devDependencies": {
     "bun-types": "latest",
