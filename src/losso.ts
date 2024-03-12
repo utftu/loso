@@ -40,12 +40,12 @@ export class Losso {
     return newConfig;
   }
   private handleConfig() {
-    const oldRawConfig = this.localStorage.getItem(configName);
-    if (!oldRawConfig) {
+    const oldConfigRaw = this.localStorage.getItem(configName);
+    if (!oldConfigRaw) {
       return this.resetConfig();
     }
     try {
-      const oldConfig = JSON.parse(oldRawConfig);
+      const oldConfig = JSON.parse(oldConfigRaw);
       if (
         typeof oldConfig !== 'object' ||
         typeof oldConfig.configs !== 'object'
