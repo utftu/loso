@@ -11,6 +11,9 @@
     "test": "bun test",
     "prepublish": "bun run build && bun run types"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "bun-types": "latest",
     "typescript": "^5.4.2"
