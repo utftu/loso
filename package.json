@@ -1,8 +1,10 @@
 {
   "name": "loso",
+  "version": "0.0.1",
   "module": "src/loso.ts",
   "type": "module",
   "main": "./dist/loso.js",
+  "types": "./dist/types/loso.d.ts",
   "scripts": {
     "build": "bun build ./src/loso.ts --outdir ./dist",
     "types": "tsc --project tsconfig.types.json",
