@@ -2,6 +2,7 @@
   "name": "loso",
   "module": "src/loso.ts",
   "type": "module",
+  "main": "./dist/loso.js",
   "scripts": {
     "build": "bun build ./src/loso.ts --outdir ./dist",
     "types": "tsc --project tsconfig.types.json",
